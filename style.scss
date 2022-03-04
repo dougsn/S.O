@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2? family= Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700; 1.900 & display=trocar');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+.desktop {
+    height: 100vh;
+    background-image: url('./assets/img/bg_win.jpg');
+    background-color: #3b3b3b;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    overflow: hidden;
+    padding: 12px;
+
+    .window {
+
+        visibility: hidden;
+        width: 80vw;
+        height: 80vh;
+        background-color: rgba(33, 33, 33, 0.815);
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        z-index: 50;
+        border-radius: 12px;
+
+        &.openWindow {
+            visibility: visible;
+        }
+
+        .window-header{
+
+            display: flex;
+            padding: 12px;
+            align-items: center;
+            
+
+
+            section {
+
+                display: flex;
+                gap: 4px;
+
+                .button {
+                    width: 18px;
+                    height: 18px;
+                    display: block;
+                    background-color: #3b3b3b;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &.close {
+                        background-color: #F04040;
+                    }
+
+                    &.maximize {
+                        background-color: #F0c140;
+                    }
+
+                    &.minimize {
+                        background-color: #4dd36a;
+                    }
+
+                }
+            }
+
+            h1 {
+                
+                color: #ffffff;
+                text-align: center;
+                width: 100%;
+                font-size: 20px;
+                font-weight: 300;
+
+            }
+
+            
+
+        }
+        main {
+            width: 100%;
+            height: 100%;
+
+            
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        
+        }
+    }
+    
+    .icons {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        .icon {
+
+            width: 112px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            opacity: .8;
+            transition: .4s ease-in-out;
+            cursor: pointer;
+
+            &:hover { // o & se refere a classe, que no caso é icon
+                opacity: 1;
+                transform: scale(1.02);
+                background-color: rgba(255, 255, 255, 0.200);
+                backdrop-filter: blur(20px);
+            }
+
+
+            img {
+                
+                width: 64px;
+           
+            }
+
+            h1 {
+                font-size: 14px;
+                color: #ffffff;
+                font-weight: 400;
+                letter-spacing: .7px;
+                text-align: center;
+            }
+
+        }
+
+    }
+
+    
+    .doc-wrapper {
+
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 32px;
+        z-index: 60;
+
+        .doc{
+            width: fit-content;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 auto;
+            // display: flex;
+            gap: 6px;
+            padding: 6px 24px;
+            border-radius: 12px;
+            backdrop-filter: blur(2px);
+            transition: .5s;
+
+            &:hover {
+                
+            backdrop-filter: blur(10px);
+            }
+
+            img {
+                width: 64px;
+                opacity: .8;
+                transition: .2s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+
+                    transform: scale(1.2) translateY(-20px);
+                    opacity: 1;
+
+                }
+            }
+
+
+        }
+    }
+}
